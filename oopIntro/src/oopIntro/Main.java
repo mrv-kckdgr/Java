@@ -5,47 +5,39 @@ public class Main {
 	public static void main(String[] args) {
 		// Stack = Heap
 		Product product1 = new Product(); //instance, referans oluşturma
-        product1.id=1;
-        product1.name="Lenovo V14";
-        product1.unitPrice = 15000;
-        product1.detail = "16 GB RAM";
+        product1.setId(2);
+        product1.setName("Lenovo V15");
+        product1.setDetail("16 gb ram");
+        product1.setDiscount(10);
+        product1.setUnitPrice(16000);
         
-        Product product2 = new Product();
-        product2.id=1;
-        product2.name="Lenovo V15";
-        product2.unitPrice = 16000;
-        product2.detail = "16 GB RAM";
+        System.out.println(product1.getUnitPriceAfterDiscount());     
         
-        Product product3 = new Product();
-        product3.id=1;
-        product3.name="HP 5";
-        product3.unitPrice = 16000;
-        product3.detail = "16 GB RAM";
         
-        Product product4 = new Product(4, "HP 6", 17000, "16 GB Ram"); //instance, referans oluşturma
         
-        Product[] products={product1, product2, product3};
+        
+        Product[] products={product1};
         
         for (Product product:products) {
-        	System.out.println(product.name);
+        	System.out.println(product.getName());
         }
         System.out.println(products.length);
         
         
         Category category1 = new Category();
-        category1.id=1;
-        category1.name="Bilgisayar";
+        category1.setId(1);
+        category1.setName("Bilgisayar");
         
         Category category2 = new Category();
-        category2.id=2;
-        category2.name="Ev-Bahçe";
+        category2.setId(2);
+        category2.setName("Ev-Bahçe");
+        
+        System.out.println(category1.getName());
+        System.out.println(category2.getName());
         
         ProductManager productManager=new ProductManager();
         // product ' ın bellek adresini göndermiş oluyoruz
         productManager.addToCart(product1);
-        
-        productManager.addToCart(product2);
-        productManager.addToCart(product3);
 
 	}
 

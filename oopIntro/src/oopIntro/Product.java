@@ -1,31 +1,72 @@
 package oopIntro;
 
 public class Product {
+	//encapsulation
+	//final sadece ctor da set edilebilir
+	//private ile dışardan erişime kapatıyoruz
+	private int id;
+	private String name;
+	private double unitPrice;
+	private String detail;
+	private double discount;
+	//private double unitPriceAfterDiscount;
 	
+	public Product() {
+		
+	}
+    
+	public Product(int id, String name, double unitPrice, String detail, double discount) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.unitPrice = unitPrice;
+		this.detail = detail;
+		this.discount=discount;
+		//this.unitPriceAfterDiscount=unitPriceAfterDiscount;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getUnitPrice() {
+		return unitPrice;
+	}
+	public void setUnitPrice(double unitPrice) {
+		this.unitPrice = unitPrice;
+	}
+	public String getDetail() {
+		return detail;
+	}
+	public void setDetail(String detail) {
+		this.detail = detail;
+	}
+	public double getDiscount() {
+		return discount;
+	}
+	public void setDiscount(double discount) {
+		this.discount = discount;
+	}
+	public double getUnitPriceAfterDiscount() {
+		return this.unitPrice-(this.unitPrice * this.discount / 100);
+	}
+
 	//ctor - yapıcı
 	// istediğimiz kod varsa buraya yazarız
-	public Product() {
-		System.out.println("Ben çalıştım");
-	}
+	
 	
 	//overloading aşırı yükleme
-	public Product(int id, String name, double unitPrice, String detail) {
-		// Bu class içindeki
-		this();
-		this.id=id;
-		this.name=name;
-		this.unitPrice=unitPrice;
-		this.detail=detail;
-	}
 	
-    int id;
-    String name;
-    double unitPrice;
-    String detail;
-
 }
 
-//Method: iŞ yapan kodblokları
+//Method: iş yapan kodblokları
 // İş yapan classlar içine yazılır
 // S-> her class bir iş yapar
 // Özellik tutucu classlar
